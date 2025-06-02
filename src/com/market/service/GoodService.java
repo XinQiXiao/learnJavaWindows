@@ -93,4 +93,16 @@ public class GoodService {
 		
 	}
 	
+	// 加减库存
+	public boolean addAndMinusStock(Good good,int num) {
+		boolean result=false;
+		if(num+good.getStock()>=0) {
+			String sql="update goods set stock="+(num+good.getStock())+" where id="+good.getId()+";";
+			result=goodDAO.setDataBySql(sql);
+		}else {
+			System.out.println("-----库存量必须大于0");
+		}
+		return result;	
+	}
+	
 }

@@ -29,11 +29,13 @@ public class UserDao {
 			System.out.println("用户从数据库获取异常:"+e);
 		}finally {
 			try {
+				
 				stmt.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 			try {
+				
 				conn.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
